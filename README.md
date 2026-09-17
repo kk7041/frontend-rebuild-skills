@@ -7,14 +7,9 @@
 
 先 rebuild，再 graft。不要在 rebuild 过程中改自己的产品仓。
 
-仓库是 **private**。别人要装，先被邀请成 collaborator，再走下面的命令。
+仓库是 **public**，直接装即可。
 
 ## 安装
-
-对方需要：
-
-- GitHub 账号已被加进本仓库（Settings → Collaborators）
-- 本机 `gh auth login` 已登录（`npx skills` 拉私有仓走 GitHub 凭证）
 
 一次装两个：
 
@@ -64,10 +59,3 @@ graft-rebuilt-ui/
 - 结果是重建预览，不是原仓库源码。原站品牌、文案、资源仍属原作者。
 - graft 只接自己产品里已经有的接口；缺后端的菜单只提示，不编造假 API。
 
-## 邀请别人
-
-```bash
-gh api -X PUT repos/kk7041/frontend-rebuild-skills/collaborators/<github-username> -f permission=pull
-```
-
-对方接受邀请后即可 `npx skills add`。
